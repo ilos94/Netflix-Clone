@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author"  content="Mohamed / ilos94">
+    <meta name="description" content="Netflix Clone">
+  
+    <title>Netflix</title>
+
+    <link rel="icon" type="image/x-icon" href="nficon2016.ico">
+    <!-- Tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com/?plugin=tailwindcss-scroll-snap%22%3E"></script>
+    
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+
+  
+
+
+  <body class="bg-black overflow-x-hidden no-scrollbar">
+<header>
+<section class="fixed top-0 w-full bg-gradient-to-b from-black text-white">
+  <div class="flex xl:flex-row flex-col items-center py-4 px-12 ml-2">
+
+    <a href="#" >
+      <img src="./assets/img/Netflix Logo.png" class="w-32 cursor-pointer">
+  </a>
+  <nav class="hidden xl:flex space-x-6 ml-10 text-sm font-light w-1/2">
+      <a href="#" class="hover:text-gray-700 ">Home</a>
+      <a href="#" class=" hover:text-gray-700 ">TV Shows</a>
+      <a href="#" class="hover:text-gray-700 ">Movies</a>
+      <a href="#" class="hover:text-gray-700">New & Popular</a>
+  <a href="#" class=" hover:text-gray-700 ">My List</a>
+<a href="#" class="hover:text-gray-700 ">Watch Again</a>
+  </nav>
+  <nav class="hidden xl:flex justify-center items-center space-x-8 ml-auto text-base font-semibold">
+        <button><i class="fas fa-search text-xl cursor-pointer focus:outline-none"></i></button>
+        <button><i class="fas fa-gift text-xl cursor-pointer focus:outline-none"></i></button>
+        <button><i class="fas fa-bell text-xl cursor-pointer focus:outline-none"></i></button>
+        <button class="flex items-center focus:outline-none">
+        <img src="assets/img/profile.png" alt="profil" class="w-8 h-8 rounded" />
+        <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </nav>
+</div>
+</section>
+<section class="h-screen thumbnail ">
+<img src="assets/img/background.jpg" alt="One Punch Man" class="w-full h-screen object-cover head-img"/> 
+<video src="assets\img\Trailer\one-punch-man-official-trailer.mp4" muted id="video" class="w-full h-screen object-cover "></video>
+<div class="absolute top-0 px-32">
+
+  <div class="flex flex-col xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-8/12 space-y-2 py-64">
+
+    <img src="assets/img/title.png" alt="One Punch Man"/>
+    <p class="text-white text-lg text-justify">The most powerful superhero in the world can kill anyone with one blow. But nothing can challenge him, so he struggles with ennui and depression. </p>
+
+    <div class="flex flex-row w-full space-x-4">
+      <button class="flex justify-center items-center bg-white hover:bg-opacity-80 rounded-lg shadow-md space-x-2 px-8 py-2 mt-5">
+          <i class="fas fa-play"></i>
+          <span class="text-gray-800 font-semibold">Play</span>
+
+      </button>
+      <button class="flex justify-center items-center bg-gray-800 bg-opacity-80 hover:bg-opacity-60 rounded-lg shadow-md space-x-2 px-8 py-2 mt-5">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> 
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path> 
+          </svg>
+          <span class="text-white font-semibold">More Info</span>
+      </button>      
+    </div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 bg-gradient-to-t from-black w-full h-40"></div>
+  </section> 
+</header>
+           <main class="mt-64">
+            <section>
+
+              <p class="font-bold overflow-auto  text-lg text-white ml-10 pt-6 ">Anime</p>
+              <div class="text-white pt-6 pl-[76%] justify-end">
+              
+            </div>
+              <br>
+
+              <div class="group flex overflow-hidden overflow-scroll overflow-x-hidden overflow-y-hidden ml-10 space-x-2 scroll-smooth" id="Anime">
+                <div class="absolute text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] left-0 bg-gradient-to-r from-black">
+                <button class="leftButton" onclick="goLeft('Anime')"><i
+                  class="fas fa-angle-left group-hover:visible invisible text-white absolute text-3xl"></i></button>
+                </div>
+                <div class="absolute right-2 text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] bg-gradient-to-l from-black">
+          <button class="rightButton" onclick="goRight('Anime')"><i
+                  class="fas fa-angle-right group-hover:visible invisible text-white right-0 absolute text-3xl"></i></button>
+                </div>
+          
+              
+
+                
+                  
+                  
+                  
+                  
+              </div>
+          </section>
+          <section>
+
+            <p class="font-bold overflow-auto text-lg text-white ml-10 pt-6">My List</p>
+            <div class="text-white pt-6 pl-[76%] justify-end">
+              
+            </div>
+            <br>
+
+            <div class="group flex overflow-hidden overflow-scroll overflow-x-hidden overflow-y-hidden ml-10 space-x-2" id="My List">
+              <div class="absolute text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] left-0 bg-gradient-to-r from-black">
+              <button class="leftButton" onclick="goLeft('My List')"><i
+                class="fas fa-angle-left group-hover:visible invisible text-white absolute text-3xl"></i></button>
+                </div>
+                <div class="absolute right-2 text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] bg-gradient-to-l from-black">
+        <button class="rightButton" onclick="goRight('My List')"><i
+                class="fas fa-angle-right group-hover:visible invisible text-white right-0 absolute text-3xl"></i></button>
+              </div>
+              
+            </div>
+            </div>
+        </section>
+        
+    <div class="pl-20 pt-20">
+      <p class="text-2xl text-white font-bold	mt-2">TV Shows by Genre</p>
+      <nav
+        class="space-x-4 mt-8 mb-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-4 rounded ">
+
+        <div class="ml-4 w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Action & Adventures/Vikings Valhalla.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-indigo-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Action</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Japanese/Jojos Bizarre Adventure.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-red-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Anime</h4>
+          </div>
+        </div>
+
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/TV Comedies/Rick and Morty.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-lime-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Children</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded"
+              src="./assets/img/TV Comedies/The Office.jpeg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-fuchsia-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Comedy</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Anime/My List Shaman King.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-orange-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Drama</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Lupin-Netflix-Series-1.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-purple-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">French</h4>
+          </div>
+        </div>
+
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Netflix Original/Mentiras.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-yellow-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Reality</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Action & Adventures/Jurassic World.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-emerald-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Fantasy</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Halloween.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-pink-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Horror</h4>
+          </div>
+        </div>
+
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Action & Adventures/Stranger Things.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-rose-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Sci-Fi</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded"
+              src="./assets/img/Netflix Original/Outlander.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-violet-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Romance</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Netflix Original/Son vrai visage.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-indigo-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Thriller</h4>
+          </div>
+        </div>
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Action & Adventures/Squid Game.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-emerald-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">International</h4>
+          </div>
+        </div>
+
+        <div class="w-64 h-24 relative overflow-hidden rounded cursor-pointer ">
+          <a href="#"><img class="object-cover w-64 h-24 rounded" src="./assets/img/Netflix Original/Sans répit.jpg"></a>
+          <div class="w-64 h-24 absolute top-0 bottom-0 px-6 py-4 bg-gradient-to-r from-rose-500 rounded">
+            <h4 class="w-64 h-24 mt-3 mr-28 font-bold text-white text-left text-xl">Docuseries</h4>
+          </div>
+
+
+        </div>
+      </nav>
+        <section>
+
+          <p class="font-bold overflow-auto text-lg text-white ml-10 pt-6">Trending Now</p>
+          
+              
+          </div>
+          <br>
+
+          <div class="flex overflow-hidden overflow-scroll overflow-x-hidden overflow-y-hidden ml-10 space-x-4">
+              <div>
+                  <div class="w-96">
+                      <a href=""><img class="cursor-pointer w-96" src="assets/img/Netflix Original/Mentiras.jpg" alt="Mentiras" height=""></a>
+                  </div>
+              </div>
+
+              <div>
+                  <div class="w-96">
+                      <a href=""><img class="cursor-pointer w-96" src="assets/img/Netflix Original/Outlander.jpg" alt="Outlander"></a>
+                  </div>
+              </div>
+
+              <div>
+                  <div class="w-96">
+                      <a href=""><img class="cursor-pointer w-96" src="assets/img/Netflix Original/Sans répit.jpg" alt="Sans Répit"></a>
+                  </div>
+              </div>
+
+              <div>
+                  <div class="w-96">
+                      <a href=""><img class="cursor-pointer w-96" src="assets/img/Netflix Original/Son vrai visage.jpg" alt="Son vrai visage"></a>
+                  </div>
+              </div>
+
+              <div>
+                  <div class="w-96">
+                      <a href=""><img class="cursor-pointer w-96" src="assets/img/Netflix Original/Valhalla.jpg" alt="Viking"></a>
+                  </div>
+              </div>
+
+              
+              
+              
+              
+              
+          </div>
+      </section>
+      <div class="pl-20 pt-20">
+        <p class="text-2xl text-white font-bold	mt-2">Top 10</p>
+        <div class="overflow-x-auto flex scroll scroll-auto mt-6 overflow-hidden no-scrollbar">
+          <svg width="5%" height="100%" viewBox="-20 0 70 154">
+            <path stroke="#595959" stroke-linejoin="square" stroke-width="4"
+              d="M35.377 152H72V2.538L2 19.362v30.341l33.377-8.459V152z">
+            </path>
+          </svg>
+          <img class="w-64" src="./assets/img/Netflix Original/Sans répit.jpg" alt="">
+          <svg width="5%" height="100%" viewBox="0 0 80 154">
+            <path stroke="#595959" stroke-linejoin="square" stroke-width="4"
+              d="M3.72 152H113v-30.174H50.484l4.355-3.55 29.453-24.012c5.088-4.124 9.748-8.459 13.983-13.004 4.16-4.464 7.481-9.339 9.972-14.629 2.449-5.203 3.678-11.113 3.678-17.749 0-9.428-2.294-17.627-6.875-24.645-4.597-7.042-10.941-12.494-19.07-16.376C77.803 3.957 68.496 2 58.036 2 47.591 2 38.37 4.023 30.347 8.06c-8.015 4.032-14.457 9.578-19.352 16.654-4.492 6.493-7.389 13.803-8.693 21.952h34.055c1.236-3.52 3.398-6.52 6.459-8.97 3.54-2.834 8.277-4.224 14.147-4.224 5.93 0 10.552 1.537 13.76 4.681 3.181 3.12 4.791 7.024 4.791 11.594 0 4.151-1.16 7.934-3.468 11.298-2.192 3.194-5.987 7.124-11.405 11.84L3.72 122.465V152z">
+            </path>
+          </svg>
+          <img class="w-64" src="./assets/img/Netflix Original/Mentiras.jpg">
+  
+          <svg width="5%" height="100%" viewBox="0 0 80 154">
+            <path stroke="#595959" stroke-linejoin="square" stroke-width="4"
+              d="M3.809 41.577h33.243c1.3-2.702 3.545-4.947 6.674-6.72 3.554-2.015 7.83-3.01 12.798-3.01 5.555 0 10.14 1.11 13.723 3.376 3.839 2.427 5.782 6.283 5.782 11.315 0 4.553-1.853 8.395-5.473 11.38-3.547 2.926-8.18 4.37-13.821 4.37H41.44v28.366h16.77c5.572 0 10.275 1.227 14.068 3.711 4.02 2.633 6.071 6.581 6.071 11.616 0 5.705-1.943 9.975-5.853 12.562-3.658 2.42-8.292 3.61-13.863 3.61-5.205 0-9.82-.94-13.827-2.836-3.698-1.75-6.32-4.272-7.785-7.529H2.33c2.096 12.089 7.761 21.65 17.028 28.78C29.242 148.175 42.594 152 59.476 152c10.706 0 20.175-1.783 28.42-5.337 8.185-3.528 14.575-8.486 19.208-14.884 4.595-6.346 6.896-13.938 6.896-22.837 0-6.952-1.93-13.494-5.81-19.666-3.815-6.07-9.68-10.367-17.683-12.908l-5.46-1.735 5.353-2.04c6.659-2.538 11.667-6.338 15.083-11.412 3.431-5.096 5.142-10.806 5.142-17.181 0-8.471-2.262-15.778-6.787-21.985-4.574-6.275-10.7-11.17-18.408-14.696C77.683 3.775 69.109 2 59.687 2 44.084 2 31.515 5.816 21.91 13.415c-9 7.119-15.025 16.486-18.101 28.162z">
+            </path>
+          </svg>
+          <img class="w-64" src="./assets/img/Netflix Original/Valhalla.jpg">
+          <svg width="5%" height="100%" viewBox="0 0 81 154">
+            <path stroke="#595959" stroke-linejoin="square" stroke-width="4"
+              d="M72 152h35.333v-30.977H128V92.497h-20.667V2H69.89L2 92.712v28.311h70V152zM36.202 92.188l35.93-47.998v47.998h-35.93z">
+            </path>
+          </svg><img class="w-64" src="./assets/img/Netflix Original/Son vrai visage.jpg">
+          <svg width="5%" height="100%" viewBox="0 0 81 154">
+            <path stroke="#595959" stroke-linejoin="square" stroke-width="4"
+              d="M105.588 32.174V2H13.534l-8.3 88.357h32.463c2.145-2.362 4.866-4.254 8.143-5.675 3.585-1.554 7.543-2.328 11.859-2.328 6.247 0 11.418 1.745 15.418 5.255 4.061 3.564 6.104 8.37 6.104 14.265 0 6.041-2.044 10.89-6.121 14.387-3.999 3.43-9.162 5.132-15.401 5.132-4.299 0-8.17-.694-11.601-2.095-3.11-1.268-5.577-2.946-7.368-5.042H2.592c3.308 11.593 9.782 20.623 19.46 27.164C32.472 148.464 45.64 152 61.602 152c10.12 0 19.294-1.99 27.548-5.966 8.198-3.949 14.711-9.718 19.572-17.335 4.844-7.59 7.278-16.95 7.278-28.123 0-9.182-2.013-17.314-6.032-24.431-4.02-7.118-9.514-12.7-16.51-16.775-6.99-4.072-14.849-6.109-23.612-6.109-11.06 0-20.099 3.483-27.234 10.461l-3.892 3.806 3.273-35.354h63.595z">
+            </path>
+          </svg><img class="w-64" src="assets/img/Netflix Original/Outlander.jpg">
+  
+        </div>
+      </div>
+  
+        </main>
+      </div>
+    </div>
+    <div class="pl-20 pt-24">
+      <p class="text-2xl text-white font-bold	mt-2">Action & Adventures</p>
+      <div class="text-white pt-6 pl-[76%] justify-end">
+              
+      </div>
+      <div class="group overflow-x-auto flex space-x-4 scroll-auto mt-3 overflow-x-hidden scroll-smooth" id="Action & Adventures">
+        <div class="absolute text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] left-0 bg-gradient-to-r from-black">
+        <button class="leftButton" onclick="goLeft('Action & Adventures')"><i
+          class="fas fa-angle-left group-hover:visible invisible text-white absolute text-3xl"></i></button>
+          </div>
+          <div class="absolute right-2 text-3xl opacity-0 group-hover:opacity-100  pt-8 w-48 h-[180px] bg-gradient-to-l from-black">
+  <button class="rightButton" onclick="goRight('Action & Adventures')"><i
+          class="fas fa-angle-right group-hover:visible invisible text-white right-0 absolute text-3xl"></i></button>
+          </div>
+        
+      </div>
+    </div>
+
+
+    <div class="pl-20 pt-24">
+      <p class="text-2xl text-white font-bold	mt-2">TV Comedies</p>
+      <div class="text-white pt-6 pl-[76%] justify-end">
+              
+      </div>
+      <div class="group overflow-x-auto flex space-x-4 scroll-auto mt-3 overflow-x-hidden scroll-smooth" id="TV Comedies">
+        <div class="absolute text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] left-0 bg-gradient-to-r from-black">
+        <button class="leftButton" onclick="goLeft('TV Comedies')"><i
+          class="fas fa-angle-left group-hover:visible invisible text-white absolute text-3xl"></i></button>
+          </div>
+          <div class="absolute right-2 text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] bg-gradient-to-l from-black">
+  <button class="rightButton" onclick="goRight('TV Comedies')"><i
+          class="fas fa-angle-right group-hover:visible invisible text-white right-0 absolute text-3xl"></i></button>
+          </div>
+        
+      </div>
+    </div>
+
+    <div class="pl-20 pt-24">
+      <p class="text-2xl text-white font-bold	mt-2">Japanese Animation</p>
+      <div class="text-white pt-6 pl-[76%] justify-end">
+              
+      </div>
+      <div class="group overflow-x-auto flex space-x-4 scroll-auto mt-3 overflow-x-hidden scroll-smooth" id="Japanese Animation">
+        <div class="absolute text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] left-0 bg-gradient-to-r from-black">
+        <button class="leftButton" onclick="goLeft('Japanese Animation')"><i
+          class="fas fa-angle-left group-hover:visible invisible text-white absolute text-3xl"></i></button>
+          </div>
+          <div class="absolute right-2 text-3xl opacity-0 group-hover:opacity-100 pt-8 w-48 h-[180px] bg-gradient-to-l from-black">
+  <button class="rightButton" onclick="goRight('Japanese Animation')"><i
+          class="group-hover:visible invisible fas fa-angle-right  text-white right-0 absolute text-3xl"></i></button>
+          </div>
+       
+      </div>
+    </div>
+
+
+
+  </main>
+  <footer class="flex justify-center">
+    <section>
+      <div class="text-white text-2xl pt-20 pl-24">
+        <i class="fa-brands fa-facebook w-16 h-16 hover:duration-150 hover:cursor-pointer"></i>
+        <i class="fa-brands fa-instagram w-16 h-16 hover:duration-150 hover:cursor-pointer"></i>
+        <i class="fa-brands fa-twitter w-16 h-16 hover:duration-150 hover:cursor-pointer"></i>
+        <i class="fa-brands fa-youtube w-16 h-16 hover:duration-150 hover:cursor-pointer"></i>
+      </div>
+      <section class="px-8 pb-8 text-sm text-gray-400">
+        <div>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 space-x-24">
+            <div class="">
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Audio and Subtitles</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Media Center</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Privacy</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Contact Us</a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Audio Description</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Investor Relations</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Legal Notices</a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Help Center</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Jobs</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Cookie Preferences</a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Gift Cards</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Terms of Use</a>
+              </div>
+              <div>
+                <a href="#" class="text-gray-400 hover:underline">Corporate information</a>
+              </div>
+            </div>
+
+          </div>
+          <div class="pt-4">
+            <button class="items-center border-gray-400 border p-2">
+              <span class="text-gray-400 ">Service Code</span>
+            </button>
+          </div>
+          <div class="pt-4">
+            <a href="#" class="text-gray-400 hover:underline">Â© 1997-2022 Netflix,
+              Inc. {78728261-1c19-4f28-a469-8c5fe7eb8010}</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </footer>
+<script src="main.js"></script>
+<script src="main2.js"></script>
+</body> 
+</html>
